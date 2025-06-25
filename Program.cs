@@ -1,4 +1,6 @@
 ﻿#region Обчислення середнього заробітку:
+using System.Runtime.ConstrainedExecution;
+
 bool isValidInput = true;
 
 const char cancelChar = 'x';
@@ -32,7 +34,9 @@ while (isValidInput)
     if (workers > 0)
     {
        averageSalary = totalSalary / workers;
-       Console.WriteLine($"Середній заробіток працівників: {averageSalary}");
+       
+        Console.WriteLine($"Поточний середній заробіток: {averageSalary:C3}");
+        Console.WriteLine($"Працівників: {workers}");
     }
     
 }
